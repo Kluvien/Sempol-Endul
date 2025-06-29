@@ -3,55 +3,55 @@
 
   function HeroImageSlider() {
     const images = [
-      '/img/sempol1.jpeg',
-      '/img/sempol2.jpeg',
-      '/img/sempol3.jpeg',
-      '/img/sempol4.jpeg'
+      'https://kluvien.github.io/Sempol-Endul/img/sempol1.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/img/sempol2.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/img/sempol3.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/img/sempol4.jpeg'
     ];
 
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setIndex(prev => (prev + 1) % images.length);
-      }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
-      return () => clearInterval(interval);
-    }, []);
-
-    return (
-      <img
-        src={images[index]}
-        alt={`Sempol ${index + 1}`}
-        className="rounded-2xl shadow-2xl w-full h-96 object-cover transition-all duration-700"
-      />
-    );
-  }
-
+  return (
+    <div className="relative w-full h-96 overflow-hidden rounded-2xl shadow-2xl">
+      {images.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`Sempol ${i + 1}`}
+          className={`
+          absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000
+          ${i === index ? 'opacity-100 z-0' : 'opacity-0'}
+          `}
+        />
+      ))}
+    </div>
+  );
+}
   function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const products = [
       {
-        name: "Sempol Ayam Original",
+        name: "Sempol Ayam Mentah",
         description: "Sempol ayam dengan bumbu rahasia yang gurih dan lezat",
         price: "Rp 2.000",
         image: "https://images.pexels.com/photos/5737513/pexels-photo-5737513.jpeg?auto=compress&cs=tinysrgb&w=400"
       },
       {
-        name: "Sempol Ikan Pedas",
+        name: "Sempol Ayam Matang",
         description: "Sempol ikan dengan balutan bumbu pedas yang menggugah selera",
         price: "Rp 2.500",
         image: "https://images.pexels.com/photos/7218637/pexels-photo-7218637.jpeg?auto=compress&cs=tinysrgb&w=400"
       },
       {
-        name: "Sempol Udang Spesial",
-        description: "Sempol udang segar dengan tekstur yang lembut dan rasa yang khas",
-        price: "Rp 3.000",
-        image: "https://images.pexels.com/photos/9609865/pexels-photo-9609865.jpeg?auto=compress&cs=tinysrgb&w=400"
-      },
-      {
-        name: "Sempol Mix Combo",
+        name: "Minuman Es",
         description: "Kombinasi sempol ayam, ikan, dan udang dalam satu paket hemat",
         price: "Rp 7.000",
         image: "https://images.pexels.com/photos/8879325/pexels-photo-8879325.jpeg?auto=compress&cs=tinysrgb&w=400"
@@ -66,7 +66,7 @@
       },
       {
         name: "Pak Budi",
-        text: "Harga terjangkau tapi rasa premium. Sempol ayamnya juara, anak-anak suka banget!",
+        text: "Telur dan adonannya Kerasa, pas anget-anget sisan mantabb",
         rating: 5
       },
       {
@@ -129,10 +129,10 @@
               <div className="text-white">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   <span className="block">UMKM</span>
-                  <span className="block text-yellow-200">Sempol Endul</span>
+                  <span className="block text-yellow-200">Sempol Enduull</span>
                 </h1>
                 <p className="text-xl sm:text-2xl mb-8 text-red-50 leading-relaxed">
-                  Sempol lezat dan berkualitas dengan cita rasa autentik Indonesia di Kemiri, Sidoarjo
+                  Sempol lezat dan berkualitas Home Made by Ivan Rasyad
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
@@ -149,9 +149,9 @@
                   </a>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative z-10">
                 <HeroImageSlider />
-                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+                <div className="absolute -bottom-6 -left-6 bg-white bg-opacity-100 p-4 rounded-xl shadow-lg">
                   <div className="flex items-center space-x-2">
                     <Star className="h-5 w-5 text-yellow-400 fill-current" />
                     <span className="font-semibold text-gray-800">4.9/5</span>
@@ -167,10 +167,7 @@
         <section id="tentang" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Tentang Sempol Endul</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Usaha keluarga yang telah melayani masyarakat Kemiri dengan sempol berkualitas tinggi sejak 2018
-              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Sempol Enduull</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -182,39 +179,14 @@
                 />
               </div>
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-800">Cerita Kami</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  UMKM Sempol Endul dimulai dari keinginan sederhana untuk menyajikan makanan jalanan Indonesia yang lezat dan terjangkau. 
-                  Berlokasi strategis di Kemiri, Sidoarjo, kami telah menjadi pilihan favorit masyarakat setempat.
+                  Sempol HomeMade by Ivan Rasyad adalah UMKM lokal yang menghadirkan sempol ayam dengan rasa legit, kenyal, dan kaya akan cita rasa ayam asli. Dibuat dengan resep khas rumahan, produk kami tidak hanya mengenyangkan, tetapi juga cocok menjadi teman ngobrol santai, sekaligus memberikan manfaat seperti menambah nutrisi tulang dan meningkatkan berat badan secara sehat.
+                  Kami percaya bahwa makanan tak hanya soal rasa, tapi juga perasaan—itulah kenapa setiap tusuk sempol dari kami diracik untuk membuat hati senang. Dibanding kompetitor, sempol kami memiliki keunggulan dari segi harga yang terjangkau dan kemudahan dibawa ke mana saja.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Dengan resep rahasia keluarga dan bahan-bahan segar pilihan, setiap sempol dibuat dengan penuh cinta dan perhatian 
                   untuk memberikan pengalaman kuliner yang tak terlupakan.
                 </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
-                  <div className="text-center">
-                    <div className="bg-red-100 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                      <Users className="h-8 w-8 text-red-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-800">1000+</h4>
-                    <p className="text-gray-600 text-sm">Pelanggan Setia</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-yellow-100 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                      <Award className="h-8 w-8 text-yellow-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-800">6+</h4>
-                    <p className="text-gray-600 text-sm">Tahun Berpengalaman</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-green-100 p-3 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                      <Heart className="h-8 w-8 text-green-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-800">100%</h4>
-                    <p className="text-gray-600 text-sm">Bahan Fresh</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -233,10 +205,10 @@
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {products.map((product, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-48 object-cover"
+                  <img  
+                  src="https://images.pexels.com/photos/5737513/pexels-photo-5737513.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                  alt="Proses pembuatan sempol" 
+                  className="rounded-2xl shadow-lg w-full h-80 object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
@@ -316,9 +288,9 @@
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Alamat</h4>
                       <p className="text-gray-600">
-                        Jl. Raya Kemiri No. 45<br />
+                        Perumahan Graha Kuncara Blok L-3<br />
                         Kemiri, Sidoarjo<br />
-                        Jawa Timur 61261
+                        Jawa Timur
                       </p>
                     </div>
                   </div>
@@ -329,7 +301,7 @@
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Telepon/WhatsApp</h4>
-                      <p className="text-gray-600">+62 812-3456-7890</p>
+                      <p className="text-gray-600">+62 822-3144-3272</p>
                     </div>
                   </div>
 
@@ -340,51 +312,12 @@
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Jam Operasional</h4>
                       <div className="space-y-1 text-gray-600">
-                        <p>Senin - Jumat: 15.00 - 21.00 WIB</p>
-                        <p>Sabtu - Minggu: 14.00 - 22.00 WIB</p>
+                        <p>Senin - Jumat: 08.00 - 21.00 WIB</p>
+                        <p>Sabtu - Minggu: 09.00 - 22.00 WIB</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h3>
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nama</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Masukkan nama Anda"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Nomor HP</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Masukkan nomor HP"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Pesan</label>
-                    <textarea 
-                      id="message" 
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Tulis pesan Anda..."
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-all duration-200 transform hover:scale-105"
-                  >
-                    Kirim Pesan
-                  </button>
-                </form>
               </div>
             </div>
           </div>
@@ -400,17 +333,16 @@
                   <span className="text-xl font-bold">Sempol Endul</span>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  UMKM terpercaya yang menyajikan sempol berkualitas tinggi dengan cita rasa autentik Indonesia di Kemiri, Sidoarjo.
+                  UMKM Sempol terpercaya HomeMade yang menyajikan sempol berkualitas tinggi dengan cita rasa autentik
                 </p>
               </div>
               
               <div>
                 <h4 className="text-lg font-semibold mb-4">Menu Populer</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li>Sempol Ayam Original</li>
-                  <li>Sempol Ikan Pedas</li>
-                  <li>Sempol Udang Spesial</li>
-                  <li>Sempol Mix Combo</li>
+                  <li>Sempol Ayam Mentah</li>
+                  <li>Sempol Ayam Matang</li>
+                  <li>Minuman Es</li>
                 </ul>
               </div>
               
@@ -419,10 +351,11 @@
                 <div className="space-y-2 text-gray-300">
                   <p className="flex items-center">
                     <Phone className="h-4 w-4 mr-2" />
-                    +62 812-3456-7890
+                    +62 822-3144-3272
                   </p>
                   <p className="flex items-center">
                     <MapPin className="h-4 w-4 mr-2" />
+                    Perumahan Graha Kuncara Blok L-3
                     Kemiri, Sidoarjo
                   </p>
                 </div>
