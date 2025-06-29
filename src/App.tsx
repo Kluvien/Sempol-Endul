@@ -151,11 +151,6 @@
               </div>
               <div className="relative">
                 <HeroImageSlider />
-                <img
-                  src="img/sempol1.jpeg" 
-                  alt="Tes Gambar Sempol Endul" 
-                  className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl shadow-lg opacity-50 transform scale-110"  
-                />
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
                   <div className="flex items-center space-x-2">
                     <Star className="h-5 w-5 text-yellow-400 fill-current" />
