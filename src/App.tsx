@@ -132,7 +132,7 @@
                   <span className="block text-yellow-200">Sempol Enduull</span>
                 </h1>
                 <p className="text-xl sm:text-2xl mb-8 text-red-50 leading-relaxed">
-                  Sempol lezat dan berkualitas Home Made by Ivan Rasyad
+                  Sempol lezat dan berkualitas HomeMade by Ivan Rasyad
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a 
