@@ -42,19 +42,19 @@
         name: "Sempol Ayam Mentah",
         description: "Sempol ayam dengan bumbu rahasia yang gurih dan lezat",
         price: "Rp 2.000",
-        image: "https://images.pexels.com/photos/5737513/pexels-photo-5737513.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: "https://kluvien.github.io/Sempol-Endul/sempol1.jpeg"
       },
       {
         name: "Sempol Ayam Matang",
         description: "Sempol ikan dengan balutan bumbu pedas yang menggugah selera",
         price: "Rp 2.500",
-        image: "https://images.pexels.com/photos/7218637/pexels-photo-7218637.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: "https://kluvien.github.io/Sempol-Endul/sempol4.jpeg"
       },
       {
         name: "Minuman Es",
         description: "Kombinasi sempol ayam, ikan, dan udang dalam satu paket hemat",
         price: "Rp 7.000",
-        image: "https://images.pexels.com/photos/8879325/pexels-photo-8879325.jpeg?auto=compress&cs=tinysrgb&w=400"
+        image: "https://kluvien.github.io/Sempol-Endul/sempol4.jpeg"
       }
     ];
 
@@ -83,8 +83,11 @@
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center">
-                <Utensils className="h-8 w-8 text-red-600 mr-2" />
-                <span className="text-xl font-bold text-gray-800">Sempol Endul</span>
+                <img
+                  src="https://kluvien.github.io/Sempol-Endul/logo/enduull.png" 
+                  alt="Logo Sempol Enduull"
+                  className="h-16 w-30 mr-2 object-contain"
+                />
               </div>
               
               {/* Desktop Menu */}
@@ -173,8 +176,8 @@
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <img 
-                  src="https://images.pexels.com/photos/5737513/pexels-photo-5737513.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Proses pembuatan sempol" 
+                  src="https://kluvien.github.io/Sempol-Endul/sempol3.jpeg"
+                  alt="Tentang Sempol Endul"
                   className="rounded-2xl shadow-lg w-full h-80 object-cover"
                 />
               </div>
@@ -206,8 +209,8 @@
               {products.map((product, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                   <img  
-                  src="https://images.pexels.com/photos/5737513/pexels-photo-5737513.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Proses pembuatan sempol" 
+                  src={product.image} 
+                  alt={product.name}
                   className="rounded-2xl shadow-lg w-full h-80 object-cover"
                   />
                   <div className="p-6">
@@ -215,7 +218,7 @@
                     <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-2xl font-bold text-red-600">{product.price}</span>
-                      <span className="text-sm text-gray-500">per tusuk</span>
+                      <span className="text-sm text-gray-500">per ikat</span>
                     </div>
                   </div>
                 </div>
@@ -224,11 +227,9 @@
 
             <div className="text-center mt-12">
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 max-w-2xl mx-auto">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Penawaran Spesial!</h3>
-                <p className="text-gray-600 mb-4">Beli 10 sempol, gratis 2 sempol pilihan Anda!</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Buru Mampir!</h3>
+                <p className="text-gray-600 mb-4">Sebelum Kehabisan!!!</p>
                 <div className="flex items-center justify-center space-x-2">
-                  <Clock className="h-5 w-5 text-yellow-600" />
-                  <span className="text-sm text-gray-700">Berlaku setiap hari</span>
                 </div>
               </div>
             </div>
@@ -329,8 +330,11 @@
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className="flex items-center mb-4">
-                  <Utensils className="h-8 w-8 text-red-400 mr-2" />
-                  <span className="text-xl font-bold">Sempol Endul</span>
+                <img
+                  src="https://kluvien.github.io/Sempol-Endul/logo/enduull.png" 
+                  alt="ogo Sempol Enduull"
+                  className="h-15 w-40 mr-2 object-contain"
+                />
                 </div>
                 <p className="text-gray-300 leading-relaxed">
                   UMKM Sempol terpercaya HomeMade yang menyajikan sempol berkualitas tinggi dengan cita rasa autentik
@@ -364,7 +368,7 @@
             
             <div className="border-t border-gray-700 mt-8 pt-8 text-center">
               <p className="text-gray-400">
-                © 2024 UMKM Sempol Endul. Semua hak cipta dilindungi.
+                © 2024 UMKM Sempol Enduull. Semua hak cipta dilindungi.
               </p>
             </div>
           </div>
