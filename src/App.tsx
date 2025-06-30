@@ -3,10 +3,10 @@
 
   function HeroImageSlider() {
     const images = [
-      'https://kluvien.github.io/Sempol-Endul/img/sempol1.jpeg',
-      'https://kluvien.github.io/Sempol-Endul/img/sempol2.jpeg',
-      'https://kluvien.github.io/Sempol-Endul/img/sempol3.jpeg',
-      'https://kluvien.github.io/Sempol-Endul/img/sempol4.jpeg'
+      'https://kluvien.github.io/Sempol-Endul/sempol1.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/sempol2.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/sempol3.jpeg',
+      'https://kluvien.github.io/Sempol-Endul/sempol4.jpeg'
     ];
 
   const [index, setIndex] = useState(0);
