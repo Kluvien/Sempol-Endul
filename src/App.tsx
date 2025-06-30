@@ -41,13 +41,13 @@
       {
         name: "Sempol Ayam Mentah",
         description: "Sempol ayam dengan bumbu rahasia yang gurih dan lezat",
-        price: "Rp 2.000",
+        price: "Rp 11.000",
         image: "https://kluvien.github.io/Sempol-Endul/sempol1.jpeg"
       },
       {
         name: "Sempol Ayam Matang",
         description: "Sempol ikan dengan balutan bumbu pedas yang menggugah selera",
-        price: "Rp 2.500",
+        price: "Rp 11.000",
         image: "https://kluvien.github.io/Sempol-Endul/sempol4.jpeg"
       },
       {
